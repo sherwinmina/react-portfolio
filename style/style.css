@@ -1,0 +1,29 @@
+.first-name {
+  padding-top: 40px;
+  padding-left: 30px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #80ffff;
+  
+}
+
+.last-name {
+ 
+  padding-left: 130px;
+  font-family: 'Josefin Slab', serif;
+  font-weight: thin;
+  font-size: 40px;
+  color: #f6f4ee;
+}
+
+.head-tag {
+  padding-left: 10px;
+  padding-bottom: 40px;
+  font-family: 'Josefin Slab', serif;
+  font-style: italic;
+  font-weight: thin;
+  font-size: 14px;
+  color: #ffb366;
+}
+
