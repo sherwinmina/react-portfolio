@@ -6,10 +6,11 @@ class componentName extends Component {
     return (
      
     <div style={{minHeight: '700px'}}>  
-  
-    <Item.Group>
-    <Item>
-        <Reveal animated='move'>
+    <Grid centered columns={2}>
+    <Grid.Column>
+      <h1>Hello</h1>
+
+      <Reveal animated='move'>
           <Reveal.Content visible>
             <Image src='http://www.xconomy.com/wordpress/wp-content/images/2017/04/Depositphotos_79189162_m-2015.jpg' size='small' />
           </Reveal.Content>
@@ -17,6 +18,12 @@ class componentName extends Component {
             <Image src='http://goodfilmguide.co.uk/wp-content/uploads/2010/04/avatar12.jpg' size='small' />
           </Reveal.Content>
         </Reveal>
+    </Grid.Column>
+    </Grid>
+  
+    <Item.Group>
+    <Item>
+        
 
       <Item.Content>
         <Item.Meta>

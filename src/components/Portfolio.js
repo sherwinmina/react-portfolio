@@ -41,7 +41,7 @@ class Portfolio extends Component {
           </Grid.Column>
         </Grid.Row>
 
-        <Grid.Row style={{height: '300px;'}}>
+        <Grid.Row style={{height: '100%'}}>
           <Grid.Column width={8}>
            
           </Grid.Column>
