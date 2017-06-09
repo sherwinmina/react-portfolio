@@ -64,16 +64,19 @@ class SidebarLeftSlideOut extends Component {
           
           <Sidebar.Pusher >
             <Segment basic style={{ backgroundColor:'#282828', padding: '20px'}}>
-              <Header as='h3'>About</Header>
+              
               <About />  
+
             </Segment>
             <Segment basic>
-              <Header as='h3'>Portfolio</Header>
+              
              <Portfolio />
               
             </Segment>
+              <About />  
           </Sidebar.Pusher>
         </Sidebar.Pushable>
+         <Portfolio />
       </div>
     )
   }

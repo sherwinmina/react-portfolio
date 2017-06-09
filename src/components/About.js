@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import {Button, Header, Image, Reveal, Item} from 'semantic-ui-react'
+import {Grid, Button, Header, Image, Reveal, Item} from 'semantic-ui-react'
 
 class componentName extends Component {
   render () {
     return (
      
-    <div>   
+    <div style={{minHeight: '700px'}}>  
+  
     <Item.Group>
     <Item>
         <Reveal animated='move'>
