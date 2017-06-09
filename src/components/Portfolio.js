@@ -9,7 +9,7 @@ class Portfolio extends Component {
          <Container primary textAlign='center'> <h1 style={{color:'grey'}} textAlign='center'>Portfolio</h1> </Container>
        
         </Grid.Row>
-        <Grid.Row style={{height: '300px;'}}>
+        <Grid.Row style={{height: '300px'}}>
           <Grid.Column width={6}>
           
             <Card>

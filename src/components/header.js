@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router'
+import {Link, Route} from 'react-router'
 
 import { Divider,Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
 
-
-import About from './About';
-import Portfolio from './Portfolio';
+import Pusher from './Pusher'
 
 class SidebarLeftSlideOut extends Component {
   state = { visible: false }
@@ -38,7 +36,6 @@ class SidebarLeftSlideOut extends Component {
              <div className="head-tag">(Web Developer)</div>
           </div>
          
-
         </Menu>
 
 
@@ -49,14 +46,14 @@ class SidebarLeftSlideOut extends Component {
               Home
             </Menu.Item>
 
-            <Link  to="/"><Menu.Item name='user'>
+            <Link  to="/" ><Menu.Item name='user'>
               <Icon name='user' />
               About
             </Menu.Item></Link>
              <Divider />
 
 
-            <Link  to="/portfolio"><Menu.Item name='anchor'>
+            <Link  to="/portfolio" ><Menu.Item name='anchor'>
               <Icon name='anchor' />
               Portfolio
             </Menu.Item></Link>
@@ -68,19 +65,12 @@ class SidebarLeftSlideOut extends Component {
             </Menu.Item></Link>
           </Sidebar>
           
-          <Sidebar.Pusher >
-            <Segment basic style={{ backgroundColor:'#282828', padding: '20px', height:'700px'}}>
-              
-               
-
-            </Segment>
-            <Segment basic>
-              
-             
-              
-            </Segment>
-            
-          </Sidebar.Pusher>
+         <Sidebar.Pusher >
+          <Segment basic style={{ backgroundColor: 'white', padding: '20px', height:'700px'}}>
+            {this.props.name}
+          </Segment>
+        </Sidebar.Pusher>
+          
         </Sidebar.Pushable>
          
       </div>

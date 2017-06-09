@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
+
 import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
