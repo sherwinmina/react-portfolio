@@ -1,21 +1,38 @@
 import React, { Component } from 'react'
 import {Link, Route} from 'react-router'
 
-import { Divider,Sidebar, Segment, Button, Menu, MenuItem, Image, Icon, Header } from 'semantic-ui-react'
+import {
+  Divider,
+  Sidebar, 
+  Segment, 
+  Button,
+  Menu, 
+  MenuItem, 
+  Image, 
+  Icon, 
+  Header 
+} from 'semantic-ui-react'
 
 import Pusher from './Pusher'
 
+const color = 'purple'
+
 class SidebarLeftSlideOut extends Component {
-  state = { visible: false }
+  
+  state = { visible: false,  activeItem: 'home', color : null}
 
   handleClick = () => {
     this.setState({ active: !this.state.active })
     this.setState({ visible: !this.state.visible })
-
   }
 
+  handleItemClick = (e, { name, color }) => this.setState({ activeItem: name, color: 'teal'})
+
   render() {
-    const { visible, active } = this.state
+    const { visible, active, activeItem, color } = this.state
+
+    console.log(this.state)
+
     return (
       <div  color='blue' >
         <Menu style={{color:'#F4F4F4', backgroundColor:'#1a1a1a', height: '100px'}} size='massive' tabular basic >
@@ -40,26 +57,29 @@ class SidebarLeftSlideOut extends Component {
 
 
         <Sidebar.Pushable as={Segment} style={{marginTop:'-20px', backGroundColor:'#e2e1d0'}}>
-          <Sidebar as={Menu} animation='slide out' width='wide' visible={visible} icon='labeled' vertical inverted>
-            <Menu.Item name='home'>
-              <Icon name='home' />
+          <Sidebar as={Menu} animation='slide out' width='thin' visible={visible} icon='labeled' vertical inverted pointing >
+            
+             <Link  to="/" ><Menu.Item name='home' active={activeItem === 'home' }  onClick={this.handleItemClick}>
+              <Icon name='home'  />
               Home
-            </Menu.Item>
+            </Menu.Item></Link>
 
-            <Link  to="/" ><Menu.Item name='user'>
+            <Link  to="/About" ><Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick}>
               <Icon name='user' />
               About
             </Menu.Item></Link>
-             <Divider />
 
-
-            <Link  to="/portfolio" ><Menu.Item name='anchor'>
+            <Link  to="/portfolio" ><Menu.Item name='work' active={activeItem === 'work'}  onClick={this.handleItemClick}>
               <Icon name='anchor' />
-              Portfolio
+              Work
             </Menu.Item></Link>
-            <Divider />
+           
+             <Link  to="/skills" ><Menu.Item name='code' active={activeItem === 'code'} onClick={this.handleItemClick}>
+              <Icon name='code' />
+              Skills
+            </Menu.Item></Link>
 
-            <Link  to="/contact"><Menu.Item name='mail'>
+            <Link  to="/contact"><Menu.Item name='contact' active={activeItem === 'contact'} onClick={this.handleItemClick}>
               <Icon name='mail' />
               Contact
             </Menu.Item></Link>
