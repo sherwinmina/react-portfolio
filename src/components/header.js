@@ -15,19 +15,19 @@ import {
 
 import Pusher from './Pusher'
 
-const color = 'purple'
-
 class SidebarLeftSlideOut extends Component {
   
-  state = { visible: false,  activeItem: 'home', color : null}
+  state = { visible: false,  activeItem: 'home', color : false}
 
   handleClick = () => {
-    this.setState({ active: !this.state.active })
-    this.setState({ visible: !this.state.visible })
+    this.setState({ active: !this.state.active, visible: !this.state.visible })
   }
 
-  handleItemClick = (e, { name, color }) => this.setState({ activeItem: name, color: 'teal'})
-
+  handleItemClick = (e, { name }) => {
+    
+     this.setState({activeItem: name})
+   
+  }
   render() {
     const { visible, active, activeItem, color } = this.state
 
@@ -59,12 +59,12 @@ class SidebarLeftSlideOut extends Component {
         <Sidebar.Pushable as={Segment} style={{marginTop:'-20px', backGroundColor:'#e2e1d0'}}>
           <Sidebar as={Menu} animation='slide out' width='thin' visible={visible} icon='labeled' vertical inverted pointing >
             
-             <Link  to="/" ><Menu.Item name='home' active={activeItem === 'home' }  onClick={this.handleItemClick}>
+             <Link  to="/" ><Menu.Item name='home' active={activeItem === 'home' } color={color} onClick={this.handleItemClick}>
               <Icon name='home'  />
               Home
             </Menu.Item></Link>
 
-            <Link  to="/About" ><Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick}>
+            <Link   to="/About" ><Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick}>
               <Icon name='user' />
               About
             </Menu.Item></Link>
